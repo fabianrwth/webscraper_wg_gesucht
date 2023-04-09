@@ -76,7 +76,7 @@ class WGScraperGUI:
         data = []
 
         # set up logging
-        logging.basicConfig(filename="merged_info.log", level=logging.INFO, format="%(asctime)s:%(message)s")
+        logging.basicConfig(filename="./data/merged_info.log", level=logging.INFO, format="%(asctime)s:%(message)s")
 
         # loop through each listing and extract the information
         for listing in listings:
@@ -108,7 +108,7 @@ class WGScraperGUI:
         df = pd.DataFrame(data, columns=["Title", "Price", "Size", "WG Type", "City", "District", "Street"])
 
         # save the DataFrame to a CSV file in the current working directory
-        file_path = os.path.join(os.getcwd(), "wg_listings.csv")
+        file_path = os.path.join(os.getcwd(), "./data/wg_listings.csv")
         df.to_csv(file_path, index=False)
 
         # print a message to confirm that the file has been saved
